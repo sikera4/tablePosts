@@ -1,0 +1,32 @@
+.table {
+  width: 70vw;
+  table-layout: fixed;
+  border-style: hidden;
+  box-shadow: 0 0 0 3px #453750;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 5px;
+  &__head {
+    background-color: #2F4858;
+    color: white;
+    cursor: pointer;
+  }
+  &__header-userId {
+    width: 10%;
+  }
+  &__header-id {
+    width: 10%;
+  }
+  tbody {
+    tr:nth-child(odd) {
+      background-color: #F0F6F6;
+    }
+    tr:nth-child(even) {
+      background-color: #cee0d4;
+    }
+  }
+}
+
+th, td {
+  padding: 20px;
+}
