@@ -18,6 +18,7 @@ function App() {
   const [selectedUserId, setSelectedUserId] = useState<number>(0);
   const [selectedSearchField, setSelectedSearchField] = useState('');
 
+  // methods that are passed to child components
   const onSort = (column: string, order: string) => {
     setSortingSettings({column: column, order: order});
   }
@@ -38,6 +39,7 @@ function App() {
     setSearchString(e.target.value);
   }
 
+  // methods that make api calls
   const fetchUsers = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     if (response.status !== 200) {
@@ -70,6 +72,7 @@ function App() {
     }
   }
 
+  // methods that deal with fetched data
   useEffect(() => {
     trackPromise(
     fetchData()
@@ -98,8 +101,11 @@ function App() {
       }).catch(err => alert(err.message + ' users'));
   }, [])
 
+  // method for data control and implementaition of features
   const neededPosts = useMemo(() => {
     let neededPosts = posts;
+
+    // implement search through fields
     if (searchString !== '') {
       switch (selectedSearchField) {
         case '':
@@ -119,6 +125,7 @@ function App() {
       }
     }
     
+    // implement sorting
     if (sortingSettings.column) {
       const reversed = sortingSettings.order === 'asc' ? 1 : -1;
       neededPosts = neededPosts?.sort(
@@ -126,6 +133,8 @@ function App() {
           reversed * (a[sortingSettings.column as keyof PostInterface].toString())
           .localeCompare(b[sortingSettings.column as keyof PostInterface].toString(), undefined, {numeric: true}));
     }
+
+    // implement user filter
     if (selectedUserId) {
       neededPosts = neededPosts?.filter(post => post.userId === selectedUserId);
     }
