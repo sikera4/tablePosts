@@ -74,6 +74,7 @@ function App() {
 
   // methods that deal with fetched data
   useEffect(() => {
+    document.title='Table with posts!'
     trackPromise(
     fetchData()
     .then((data) => {
