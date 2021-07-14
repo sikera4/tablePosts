@@ -11,7 +11,7 @@ const Table = (props: TableDataInterface) => {
     <div className="table-container">
       <table className="table">
         <thead className="table__head">
-          {<TableHeadItems headersInfo={props.tableHeadData}/>}
+          {props.tableHeadData && <TableHeadItems headersInfo={props.tableHeadData}/>}
         </thead>
         <tbody>
           { props.tableBodyData.posts.map((post) => {

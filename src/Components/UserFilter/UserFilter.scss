@@ -1,7 +1,7 @@
-.user-filter-container {
+.user-filter {
   display: flex;
   justify-content: space-between;
-  .user-filter {
+  &__filter {
     font-size: 1rem;
     height: 1.5rem;
     border-radius: 4px;

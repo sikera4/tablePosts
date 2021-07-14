@@ -15,7 +15,7 @@ const TableHeadItems = ({ headersInfo }: {headersInfo: HeaderInfoInterface}) => 
   }
   return (
     <tr>
-      {headersInfo.headers.map((header) => {
+      {(headersInfo.headers) ? headersInfo.headers.map((header) => {
         return (<th 
         scope="col" 
         key={header} 
@@ -25,7 +25,7 @@ const TableHeadItems = ({ headersInfo }: {headersInfo: HeaderInfoInterface}) => 
           onSortingChange(header);
         }}>{header.toUpperCase()}{sortingItem && sortingItem === header && (
             header === sortingItem && sortingOrder === 'asc' ? <ArrowUpwardIcon/> : <ArrowDownwardIcon/>)}</th>)
-      })}<th scope="col" className="table__header-delete">DELETE</th>
+      }): ''}<th scope="col" className="table__header-delete">DELETE</th>
     </tr>
   )
 }

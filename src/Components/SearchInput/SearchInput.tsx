@@ -5,9 +5,9 @@ import { SearchInputInterface } from '../../Interfaces/Interfaces';
 
 const SearchInput = (props: SearchInputInterface) => {
   return (
-    <div className="search-input-container">
+    <div className="search-input">
       <span>Search through posts'
-        <select defaultValue="none" className="search-field-select"
+        <select defaultValue="none" className="search-input__search-field-select"
         onChange={props.onSelectedSearchFieldChange}>
           <option value="none">Choose a field...</option>
           {props.headers.map((header) => {
@@ -19,7 +19,7 @@ const SearchInput = (props: SearchInputInterface) => {
         </span>
       <input type="text"
       placeholder="Search..."
-      className="search-input"
+      className="search-input__input"
       onChange={props.onSearchStringChange}/>
     </div>
   )

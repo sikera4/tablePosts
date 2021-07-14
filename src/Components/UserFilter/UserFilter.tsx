@@ -5,9 +5,9 @@ import { UserFilterPropsInterface } from '../../Interfaces/Interfaces';
 
 const UserFilter = (props: UserFilterPropsInterface) => {
   return (
-    <div className="user-filter-container">
-      <span className="filter-caption">Filter posts by user: </span>
-      <select className="user-filter" defaultValue="0"
+    <div className="user-filter">
+      <span className="user-filter__filter-caption">Filter posts by user: </span>
+      <select className="user-filter__filter" defaultValue="0"
       onChange={props.onUserFilterChange}>
         <option value="0">Choose a user...</option>
         {props.usersData.map(user => {
