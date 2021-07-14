@@ -1,7 +1,28 @@
 .App {
-  padding: 100px;
-  .search-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .controls {
+    width: 65vw;
+    align-self: center;
     margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #2F4858;
+    border-radius: 4px;
+    background-color: #F0F6F6;
+    &__header {
+      margin-top: 0;
+      margin-bottom: 5px;
+      line-height: 1.5rem;
+      font-size: 1.25rem;
+      text-align: center;
+    }
   }
 }
 

@@ -1,21 +1,40 @@
 .table {
+  min-width: 600px;
   width: 70vw;
   table-layout: fixed;
   border-style: hidden;
-  box-shadow: 0 0 0 3px #453750;
+  box-shadow: 0 0 0 3px #2F4858;
   border-collapse: collapse;
   border-spacing: 0;
   border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
   &__head {
     background-color: #2F4858;
     color: white;
     cursor: pointer;
+    user-select: none;
+    .MuiSvgIcon-root {
+      height: 1.2rem;
+      vertical-align: bottom;
+    }
   }
   &__header-userId {
     width: 10%;
   }
   &__header-id {
     width: 10%;
+  }
+  &__header-delete {
+    width: 10%;
+    cursor: default;
+  }
+  &__delete-icon {
+    cursor: pointer;
+    color: #2F4858;
+    &:active {
+      color: #453750;
+    }
   }
   tbody {
     tr:nth-child(odd) {
@@ -28,5 +47,5 @@
 }
 
 th, td {
-  padding: 20px;
+  padding: 12px;
 }
