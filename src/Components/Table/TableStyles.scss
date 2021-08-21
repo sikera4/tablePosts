@@ -30,6 +30,8 @@
     cursor: default;
   }
   &__delete-icon {
+    background: none;
+    border: none;
     cursor: pointer;
     color: #2F4858;
     &:active {

@@ -10,26 +10,31 @@ const LoadingIndicator = () => {
   const { promiseInProgress } = usePromiseTracker();
   return (
     <>
-      {promiseInProgress ?
-      <div className="loader" style={{
-        width: "100%",
-        height: "300",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}>
-        <Loader type="Puff" color="#2F4858" height="100" width="100" />
-      </div>: ''}
+      {promiseInProgress
+        ? (
+          <div
+            className="loader"
+            style={{
+              width: '100%',
+              height: '300',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Loader type="Puff" color="#2F4858" height="100" width="100" />
+          </div>
+        ) : ''}
     </>
-  )
-}
+  );
+};
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <LoadingIndicator/>
+    <LoadingIndicator />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

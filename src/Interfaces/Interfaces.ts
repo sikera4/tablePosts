@@ -3,14 +3,19 @@ export interface UsersDataInterface {
   username: string;
 }
 
-export interface TableDataInterface {
-  tableHeadData: HeaderInfoInterface;
-  tableBodyData: TableBodyDataInterface;
-}
-
 export interface HeaderInfoInterface {
   headers: string[];
   onSort(column: string, order: string): void;
+}
+
+export interface TableBodyDataInterface {
+  posts: PostInterface[];
+  onDelete(id: string): void;
+}
+
+export interface TableDataInterface {
+  tableHeadData: HeaderInfoInterface;
+  tableBodyData: TableBodyDataInterface;
 }
 
 export interface PostInterface {
@@ -18,11 +23,6 @@ export interface PostInterface {
   id: number;
   title: string;
   body: string;
-}
-
-export interface TableBodyDataInterface {
-  posts: PostInterface[];
-  onDelete(id: string): void;
 }
 
 export interface UserFilterPropsInterface {
